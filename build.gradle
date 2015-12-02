@@ -1,0 +1,33 @@
+group 'test.gridgain'
+version '1.0-SNAPSHOT'
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.5'
+  distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+}
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven { url "http://www.gridgainsystems.com/nexus/content/repositories/external" }
+    jcenter()
+}
+
+ext {
+    versionIgnite = '1.4.1'
+    versionGridGain7 = '7.4.1-p1'
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile group: 'org.gridgain', name: 'gridgain-core', version: versionGridGain7
+    compile group: 'org.apache.ignite', name: 'ignite-spring', version: versionIgnite
+    compile group: 'org.apache.ignite', name: 'ignite-indexing', version: versionIgnite
+    compile group: 'org.apache.ignite', name: 'ignite-slf4j', version: versionIgnite
+    compile group: 'org.apache.ignite', name: 'ignite-schedule', version: versionIgnite
+    compile group: 'org.projectlombok', name: 'lombok', version:'1.14.4'
+    compile group: 'joda-time', name: 'joda-time', version:'2.2'
+}
