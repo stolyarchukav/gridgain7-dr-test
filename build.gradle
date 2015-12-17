@@ -17,8 +17,8 @@ repositories {
 }
 
 ext {
-    versionIgnite = '1.4.1'
-    versionGridGain7 = '7.4.1-p1'
+    versionIgnite = '1.5.1-b1'
+    versionGridGain7 = '7.5.1-b1'
 }
 
 dependencies {
